@@ -22,3 +22,7 @@ To do:
 * asyncio
 * random
 * string
+
+---
+
+[Website](https://novuh.dev/) | [Discord](https://novuh.dev/discord) | contact@novuh.dev
