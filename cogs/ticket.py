@@ -55,7 +55,7 @@ class Ticket(commands.Cog):
             await ctx.message.channel.delete()
             await ctx.message.author.send(embed=embed)
 
-    # @commands.has_role(851987287913922610)
+    @commands.has_role(851987287913922610)
     @commands.command(aliases=["sclose", "sc", "staffclose"])
     async def supportclose(self, ctx, *, reason: str):
         if "ticket" in ctx.channel.name:
