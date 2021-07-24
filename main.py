@@ -12,4 +12,4 @@ async def on_ready():
     print("Bot online.")
 
 # GITHUB
-bot.run( ${{ secrets.BOT_TOKEN }} )
+bot.run(open("token.txt", "r").read())
