@@ -64,7 +64,7 @@ class Ticket(commands.Cog):
             await sleep(3)
             embed=discord.Embed(color=0xba47fe)
             embed.set_author(name="Support Ticket Closed")
-            embed.description = f'({self.opened[ctx.channel.id]["channel"]})'
+            embed.description = f'({self.opened[str(ctx.channel.id)]["channel"]})'
             embed.add_field(name="Reason:", value=f'*"{reason}"*', inline=True)
             embed.add_field(name="Closed by:", value=f"*{ctx.message.author}*", inline=True)
             await self.opened[str(ctx.channel.id)]["author"].send(embed=embed)
