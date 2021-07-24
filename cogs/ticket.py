@@ -33,7 +33,7 @@ class Ticket(commands.Cog):
 
             await channel.send("<@&851987287913922610>", embed=embed)
 
-            mapping = {channel.id: {
+            mapping = {str(channel.id): {
                 "author": ctx.message.author,
                 "query": query,
                 "channel": channel_name
@@ -67,7 +67,7 @@ class Ticket(commands.Cog):
             embed.description = f'({self.opened[ctx.channel.id]["channel"]})'
             embed.add_field(name="Reason:", value=f'*"{reason}"*', inline=True)
             embed.add_field(name="Closed by:", value=f"*{ctx.message.author}*", inline=True)
-            await self.opened[ctx.channel.id]["author"].send(embed=embed)
+            await self.opened[str(ctx.channel.id)]["author"].send(embed=embed)
             await ctx.channel.delete()
 
 
