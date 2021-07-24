@@ -66,6 +66,7 @@ class Ticket(commands.Cog):
             embed.description = f'({self.opened[ctx.channel.id]["channel"]})'
             embed.add_field(name="Reason:", value=f'*"{reason}"*', inline=True)
             embed.add_field(name="Closed by:", value=f"*{ctx.message.author}*", inline=True)
+            print(self.opened)
             await self.opened[ctx.channel.id]["author"].send(embed=embed)
             await ctx.channel.delete()
 
