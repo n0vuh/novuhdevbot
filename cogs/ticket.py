@@ -59,6 +59,7 @@ class Ticket(commands.Cog):
     @commands.command(aliases=["sclose", "sc", "staffclose"])
     async def supportclose(self, ctx, *, reason: str):
         if "ticket" in ctx.channel.name:
+            print(self.opened)
             await ctx.send("Support has closed this ticket...")
             await sleep(3)
             embed=discord.Embed(color=0xba47fe)
@@ -66,7 +67,6 @@ class Ticket(commands.Cog):
             embed.description = f'({self.opened[ctx.channel.id]["channel"]})'
             embed.add_field(name="Reason:", value=f'*"{reason}"*', inline=True)
             embed.add_field(name="Closed by:", value=f"*{ctx.message.author}*", inline=True)
-            print(self.opened)
             await self.opened[ctx.channel.id]["author"].send(embed=embed)
             await ctx.channel.delete()
 
